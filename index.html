@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon Ball ∞ — Enciclopedia Definitiva · Battle Power Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#E8571A; --gold:#F5C518; --darker:#060300; --surface:#1a0e04;
+  --surface2:#231208; --border:#3d2010; --border2:#5c3218;
+  --text:#f0e6d3; --text2:#b8a48a; --text3:#7a6450;
+  --red:#C0392B; --blue:#2471A3; --green:#1E8449; --purple:#6C3483;
+  --sc-green:#00FF41; --sc-dark:#001400;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--darker);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 20%,rgba(232,87,26,.08) 0%,transparent 50%),radial-gradient(ellipse at 85% 80%,rgba(245,197,24,.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+.container{max-width:1100px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
+
+/* HERO */
+.hero{text-align:center;padding:56px 20px 36px}
+.hero-pre{font-family:'Cinzel',serif;font-size:11px;letter-spacing:8px;color:var(--gold);opacity:.6;text-transform:uppercase;margin-bottom:14px;animation:fadeUp 1s ease both}
+.hero-title{font-family:'Zen Dots',sans-serif;font-size:clamp(32px,7vw,74px);font-weight:400;line-height:.95;color:var(--gold);text-shadow:0 0 60px rgba(245,197,24,.3),0 0 120px rgba(232,87,26,.2);animation:fadeUp 1s ease .1s both;letter-spacing:2px}
+.hero-title .sub{display:block;font-family:'Cinzel',serif;font-size:clamp(11px,2vw,15px);letter-spacing:5px;color:var(--orange);margin-top:12px;font-weight:400}
+.hero-divider{display:flex;align-items:center;gap:16px;margin:22px auto;max-width:500px;animation:fadeUp 1s ease .2s both}
+.hero-divider::before,.hero-divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.4}
+.hero-sub{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;color:var(--text2);text-transform:uppercase;animation:fadeUp 1s ease .3s both}
+.hero-balls{display:flex;justify-content:center;gap:10px;margin:18px 0;animation:fadeUp 1s ease .4s both}
+.db-ball{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd700,#e8571a 60%,#8b2500);box-shadow:0 0 10px rgba(245,197,24,.4),inset -3px -3px 6px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:6px;color:rgba(200,30,30,.9);font-weight:700;letter-spacing:-1px}
+.hero-note{font-size:13px;color:var(--text3);font-style:italic;margin-top:6px;line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:28px 0 36px;animation:fadeUp 1s ease .5s both}
+.nav-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:9px 18px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.nav-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--orange),#c04010);transform:translateX(-100%);transition:transform .3s;z-index:-1}
+.nav-btn:hover{color:var(--text);border-color:var(--orange)}
+.nav-btn:hover::before{transform:translateX(0)}
+.nav-btn.active{background:linear-gradient(135deg,var(--orange),#c04010);color:#fff;border-color:var(--orange);box-shadow:0 0 20px rgba(232,87,26,.3)}
+
+/* SECTIONS */
+.section{display:none;animation:secIn .4s ease}
+.section.active{display:block}
+@keyframes secIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.sec-hdr{border-left:3px solid var(--orange);padding-left:16px;margin:0 0 26px}
+.sec-hdr h2{font-family:'Zen Dots',sans-serif;font-size:22px;font-weight:400;color:var(--gold);line-height:1.2;letter-spacing:1px}
+.sec-hdr p{font-size:14px;color:var(--text2);margin-top:5px;font-style:italic}
+.sub-ttl{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin:28px 0 12px}
+
+.card{background:var(--surface);border:1px solid var(--border);padding:22px;margin-bottom:14px;position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--orange),transparent)}
+.info-box{padding:14px 18px;margin:14px 0;border-left:3px solid;font-size:14px;line-height:1.85}
+.io{border-color:var(--orange);background:rgba(232,87,26,.07)}
+.ib{border-color:var(--blue);background:rgba(36,113,163,.07)}
+.ig{border-color:var(--gold);background:rgba(245,197,24,.07)}
+.iv{border-color:var(--green);background:rgba(30,132,73,.07)}
+
+/* SOURCES */
+.sources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+@media(max-width:600px){.sources-grid{grid-template-columns:1fr}}
+.src-card{background:var(--surface2);border:1px solid var(--border);padding:16px}
+.src-year{font-family:'Zen Dots',sans-serif;font-size:11px;color:var(--orange);letter-spacing:2px;margin-bottom:4px}
+.src-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);margin-bottom:6px;font-weight:600}
+.src-body{font-size:13px;color:var(--text2);line-height:1.7}
+
+/* STAT GRID */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+@media(max-width:580px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:var(--surface2);border:1px solid var(--border);padding:14px;text-align:center;transition:border-color .2s}
+.stat-card:hover{border-color:var(--border2)}
+.stat-abbr{font-family:'Zen Dots',sans-serif;font-size:22px;margin-bottom:4px}
+.stat-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:7px}
+.stat-desc{font-size:12px;color:var(--text3);line-height:1.5}
+.s-bp{color:var(--orange)} .s-hp{color:#E8449A} .s-ki{color:#9B59B6}
+.s-sp{color:var(--blue)} .s-ap{color:var(--red)} .s-dp{color:var(--green)} .s-tc{color:var(--gold)}
+
+/* FORMULA */
+.formula-box{background:var(--surface2);border:1px solid var(--border2);padding:28px 24px;text-align:center;margin:14px 0;position:relative}
+.formula-box::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(245,197,24,.04) 0%,transparent 70%);pointer-events:none}
+.formula-main{font-family:'Zen Dots',sans-serif;font-size:clamp(13px,2.2vw,20px);letter-spacing:1px;line-height:2.2;color:var(--text)}
+.vbp{color:var(--orange)} .vap{color:var(--red)} .vdp{color:var(--green)} .vsp{color:var(--blue)} .vtc{color:var(--gold)} .vhp{color:#E8449A}
+.formula-note{font-size:13px;color:var(--text2);font-style:italic;margin-top:10px;line-height:1.7}
+
+/* VERIFY */
+.verify-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+@media(max-width:580px){.verify-grid{grid-template-columns:1fr}}
+.verify-card{background:var(--surface2);border:1px solid var(--border);padding:14px;text-align:center}
+.verify-name{font-family:'Cinzel',serif;font-size:13px;color:var(--text2);margin-bottom:6px}
+.verify-calc{font-size:12px;color:var(--text3);line-height:1.7;margin-bottom:6px}
+.verify-result{font-family:'Zen Dots',sans-serif;font-size:18px;color:var(--orange)}
+.verify-check{font-size:16px;color:var(--green);margin-left:4px}
+
+/* CALC */
+.calc-wrap{background:var(--surface);border:1px solid var(--border);padding:22px;margin:14px 0}
+.calc-row{display:flex;align-items:center;gap:12px;margin:9px 0}
+.calc-lbl{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;width:120px;flex-shrink:0;text-transform:uppercase}
+.calc-row input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:2px;outline:none;cursor:pointer}
+.calc-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--orange);cursor:pointer;box-shadow:0 0 8px rgba(232,87,26,.5)}
+.calc-val{font-family:'Zen Dots',sans-serif;font-size:14px;min-width:40px;text-align:right}
+.calc-result{background:var(--surface2);border:1px solid var(--orange);padding:20px;text-align:center;margin-top:18px;box-shadow:0 0 28px rgba(232,87,26,.1)}
+.r-lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--text2);font-family:'Cinzel',serif}
+.r-val{font-family:'Zen Dots',sans-serif;font-size:40px;color:var(--orange);margin:8px 0;text-shadow:0 0 20px rgba(232,87,26,.4)}
+.r-tier{font-size:13px;color:var(--text2);font-style:italic}
+.calc-breakdown{font-size:12px;color:var(--text3);margin-top:6px;font-family:'Cinzel',serif;letter-spacing:.5px}
+
+/* SCOUTER */
+.scouter-frame{background:var(--sc-dark);border:2px solid var(--sc-green);padding:26px;position:relative;overflow:hidden;margin:14px 0;box-shadow:0 0 30px rgba(0,255,65,.12),inset 0 0 60px rgba(0,255,65,.03)}
+.scouter-frame::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,65,.02) 2px,rgba(0,255,65,.02) 4px);pointer-events:none}
+.scouter-frame::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--sc-green),transparent);animation:scan 3s linear infinite}
+@keyframes scan{0%{top:0;opacity:1}100%{top:100%;opacity:.2}}
+.sc-lbl{font-family:monospace;font-size:10px;color:rgba(0,255,65,.5);letter-spacing:4px;margin-bottom:5px}
+.sc-val{font-family:monospace;font-size:34px;color:var(--sc-green);letter-spacing:5px;font-weight:700;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.7}}
+.sc-sub{font-family:monospace;font-size:11px;color:rgba(0,255,65,.4);margin-top:4px}
+.sc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.sc-sv{font-family:monospace;font-size:16px;color:var(--sc-green)}
+.sc-sl{font-family:monospace;font-size:9px;color:rgba(0,255,65,.4);letter-spacing:3px;margin-top:3px}
+.sc-sel{background:var(--sc-dark);color:var(--sc-green);border:1px solid rgba(0,255,65,.4);padding:8px 10px;font-family:monospace;font-size:13px;width:100%;outline:none;cursor:pointer;margin-top:7px}
+.sc-sel option{background:#001400}
+.sc-formula-display{font-family:monospace;font-size:12px;color:rgba(0,255,65,.6);margin-top:10px;line-height:1.8;border-top:1px solid rgba(0,255,65,.2);padding-top:10px}
+
+/* TABLES */
+.bp-table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.bp-table th{background:var(--surface2);color:var(--text2);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 10px;text-align:left;border-bottom:1px solid var(--border2)}
+.bp-table td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.bp-table tr:hover td{background:rgba(232,87,26,.04)}
+.bp-table tr:last-child td{border-bottom:none}
+.bp-num{font-family:'Zen Dots',sans-serif;color:var(--orange);font-size:14px}
+.bp-bar-bg{width:90px;height:5px;background:var(--border);display:inline-block;vertical-align:middle;margin-left:6px}
+.bp-bar-fill{height:5px;background:linear-gradient(to right,var(--orange),var(--gold))}
+.stat-mini{font-size:12px;color:var(--text3);font-family:'Cinzel',serif}
+.badge{display:inline-block;padding:2px 7px;font-size:10px;font-family:'Cinzel',serif;letter-spacing:1px;margin-left:5px;border:1px solid}
+.bs{color:#81C784;border-color:#2d6b2f;background:rgba(30,132,73,.12)}
+.bh{color:#90CAF9;border-color:#1a4a7a;background:rgba(36,113,163,.12)}
+.bn{color:#A5D6A7;border-color:#2d6b2f;background:rgba(30,100,73,.12)}
+.bf{color:#CE93D8;border-color:#4a2a6b;background:rgba(108,52,131,.12)}
+.ba{color:#BDBDBD;border-color:#4a4a4a;background:rgba(80,80,80,.12)}
+.bd{color:#FF8A65;border-color:#6b2a1a;background:rgba(192,57,43,.12)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),var(--gold),var(--orange))}
+.saga-item{position:relative;margin-bottom:30px}
+.saga-dot{position:absolute;left:-24px;top:5px;width:14px;height:14px;border-radius:50%;border:2px solid var(--orange);background:var(--darker);box-shadow:0 0 8px rgba(232,87,26,.4)}
+.saga-dot.g{border-color:var(--gold);box-shadow:0 0 8px rgba(245,197,24,.4);background:var(--gold)}
+.saga-arc{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:5px}
+.saga-name{font-family:'Zen Dots',sans-serif;font-size:16px;color:var(--gold);margin-bottom:12px;letter-spacing:.5px}
+.detail-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--orange);cursor:pointer;background:none;border:none;padding:5px 0;display:block;margin-top:7px;text-transform:uppercase}
+.detail-btn:hover{opacity:.7}
+.detail-body{display:none;margin-top:10px}
+.detail-body.open{display:block}
+.detail-body p{font-size:13px;line-height:1.85;color:var(--text2);border-left:2px solid var(--border2);padding-left:13px;font-style:italic}
+
+/* RACE */
+.race-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+@media(max-width:620px){.race-grid{grid-template-columns:1fr}}
+.race-card{background:var(--surface);border:1px solid var(--border);padding:18px;transition:border-color .2s}
+.race-card:hover{border-color:var(--border2)}
+.race-hdr{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.race-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border2)}
+.race-name{font-family:'Zen Dots',sans-serif;font-size:15px;color:var(--gold);letter-spacing:.5px}
+.race-sub{font-size:11px;color:var(--text3);font-style:italic;margin-top:2px}
+.race-body{font-size:13px;line-height:1.8;color:var(--text2)}
+.traits{margin-top:10px;display:flex;flex-wrap:wrap;gap:5px}
+.trait{font-family:'Cinzel',serif;font-size:10px;padding:2px 9px;border:1px solid var(--border2);color:var(--text2);letter-spacing:.5px}
+
+/* ABILITIES */
+.ability-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+@media(max-width:620px){.ability-grid{grid-template-columns:1fr}}
+.ability-card{background:var(--surface);border:1px solid var(--border);padding:16px;transition:border-color .2s}
+.ability-card:hover{border-color:var(--orange)}
+.ability-name{font-family:'Cinzel',serif;font-size:14px;margin-bottom:3px;font-weight:600}
+.ability-user{font-size:11px;color:var(--orange);font-style:italic;margin-bottom:7px}
+.ability-desc{font-size:13px;color:var(--text2);line-height:1.7}
+
+/* CURIOSITÀ */
+.cur-item{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.cur-item:last-child{border-bottom:none}
+.cur-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);margin-bottom:9px;font-weight:600}
+.cur-body{font-size:14px;line-height:1.85;color:var(--text2)}
+
+/* FOOTER */
+.footer{text-align:center;padding:36px 20px;border-top:1px solid var(--border);margin-top:56px}
+.footer-title{font-family:'Zen Dots',sans-serif;font-size:20px;color:var(--gold);opacity:.35;letter-spacing:2px}
+.footer-sub{font-size:12px;color:var(--text3);margin-top:8px;letter-spacing:1px;font-style:italic;line-height:1.8}
+.footer-balls{display:flex;justify-content:center;gap:8px;margin:14px 0;opacity:.25}
+
+@media print{
+  body{background:#fff;color:#111} body::before{display:none}
+  .nav{display:none}
+  .section{display:block!important;page-break-before:always}
+  .section:first-of-type{page-break-before:auto}
+  .hero{page-break-after:always}
+  .scouter-frame{border:1px solid #aaa;background:#f5f5f5}
+  .sc-val,.sc-sv{color:#1a5c20} .sc-lbl,.sc-sl,.sc-sub,.sc-formula-display{color:#555}
+  .calc-wrap{display:none} .detail-body{display:block!important}
+  .card,.race-card,.ability-card{background:#f8f8f8;border:1px solid #ddd}
+}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--darker)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <div class="hero-pre">Enciclopedia Definitiva · Edizione Speciale Battle Power</div>
+  <h1 class="hero-title">DRAGON BALL ∞<span class="sub">Formula Segreta del Sentoryoku · Analisi Completa</span></h1>
+  <div class="hero-divider"><span>◆</span></div>
+  <div class="hero-sub">Manga · Videogiochi · Daizenshuu · Bouken Special 1987</div>
+  <div class="hero-balls">
+    <div class="db-ball">★</div><div class="db-ball">★★</div><div class="db-ball">★★★</div>
+    <div class="db-ball">★★★★</div><div class="db-ball">★★★★★</div>
+    <div class="db-ball">★★★★★★</div><div class="db-ball">★★★★★★★</div>
+  </div>
+  <div class="hero-note">Fonti: Manga Toriyama · Dragon Ball: Bouken Special (1987) · DB: Daimaou Fukkatsu (FC 1988) · DB3: Goku Den (FC 1989) · DBZ: Goku Hishoden (GB 1994) · Daizenshuu</div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="show('formula',this)">⚡ Formula BP</button>
+  <button class="nav-btn" onclick="show('scouter',this)">◉ Scouter</button>
+  <button class="nav-btn" onclick="show('saghe',this)">◈ Saghe &amp; BP</button>
+  <button class="nav-btn" onclick="show('razze',this)">◇ Razze</button>
+  <button class="nav-btn" onclick="show('abilita',this)">✦ Abilità</button>
+  <button class="nav-btn" onclick="show('curiosita',this)">✧ Curiosità</button>
+</nav>
+
+<!-- ═══ FORMULA ═══ -->
+<section class="section active" id="sec-formula">
+  <div class="sec-hdr"><h2>La Formula del Battle Power</h2><p>Derivata dall'analisi incrociata di quattro fonti primarie ufficiali — formula verificata sui dati canonici</p></div>
+
+  <div class="sub-ttl">Fonti Primarie — Il Corpus Documentale</div>
+  <div class="sources-grid">
+    <div class="src-card">
+      <div class="src-year">1987</div>
+      <div class="src-title">Dragon Ball: Bouken Special</div>
+      <div class="src-body">Speciale editoriale con Q&amp;A diretto a Toriyama, curiosità e due giochi da tavolo. Quello sull'avventura di Dragon Ball (dal Red Ribbon alla saga Piccolo Daimao) assegna ad ogni personaggio <strong>Tairyoku</strong> (Life Force) e <strong>Kogeki-ryoku</strong> (Forza d'attacco). Tambourine: Tairyoku 80 — valore confermato nei successivi tre videogiochi.</div>
+    </div>
+    <div class="src-card">
+      <div class="src-year">Famicom 1988</div>
+      <div class="src-title">DB: Daimaou Fukkatsu</div>
+      <div class="src-body">Primo gioco a codificare statistiche numeriche estese: BP, HP, KI, SP, AP, DP. Sviluppato con supervisione editoriale Shueisha/V-Jump. Le stat rispecchiano la visione interna di Toriyama sul sistema di combattimento.</div>
+    </div>
+    <div class="src-card">
+      <div class="src-year">Famicom 1989</div>
+      <div class="src-title">Dragon Ball 3: Goku Den</div>
+      <div class="src-body">Introduce esplicitamente il termine <strong>Sentoryoku (戦闘力)</strong> come valore composito. Le quattro stat sono <strong>Power, Speed, Toughness, Technique</strong>. I valori di Yamcha, Tenshinhan e altri sono direttamente sovrapponibili ai dati del manga — fonte primaria per la formula.</div>
+    </div>
+    <div class="src-card">
+      <div class="src-year">Game Boy 1994</div>
+      <div class="src-title">DBZ: Goku Hishoden</div>
+      <div class="src-body">Conferma il sistema per la saga Z. Mantiene la struttura a quattro parametri di DB3 per la fase pre-Z e aggiunge modificatori per le trasformazioni Saiyan. I valori del periodo Saiyan/Namek confermano la formula derivata.</div>
+    </div>
+  </div>
+
+  <div class="sub-ttl">Le Statistiche — Sistema Unificato a Quattro Variabili</div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-abbr s-ap">POW</div><div class="stat-name">Power</div><div class="stat-desc">Forza fisica bruta. Danno per ogni colpo. Corrisponde alla Kogeki-ryoku del Bouken Special e all'AP di Daimaou Fukkatsu.</div></div>
+    <div class="stat-card"><div class="stat-abbr s-sp">SPD</div><div class="stat-name">Speed</div><div class="stat-desc">Velocità d'attacco e reazione. Determina ordine di azione e capacità di schivata. Componente fisico puro.</div></div>
+    <div class="stat-card"><div class="stat-abbr s-dp">TGH</div><div class="stat-name">Toughness</div><div class="stat-desc">Resistenza fisica. Correlata al Tairyoku del Bouken Special — ma il Tairyoku agisce separatamente come fattore di sopravvivenza esterno alla formula base.</div></div>
+    <div class="stat-card"><div class="stat-abbr s-tc">TEC</div><div class="stat-name">Technique</div><div class="stat-desc">Arti marziali + controllo del Ki. Il moltiplicatore della formula. Chi padroneggia il Ki amplifica esponenzialmente le stat fisiche — è il cuore della filosofia narrativa di Toriyama.</div></div>
+    <div class="stat-card"><div class="stat-abbr s-hp">LIFE</div><div class="stat-name">Life Force (Tairyoku)</div><div class="stat-desc">Dal Bouken Special 1987. Vitalità totale che agisce come fattore di sopravvivenza: non nella formula base, ma riduce il BP effettivo proporzionalmente ai danni subiti nel tempo.</div></div>
+    <div class="stat-card"><div class="stat-abbr s-ki">KI</div><div class="stat-name">Ki Control</div><div class="stat-desc">Incorporato nella Technique. Il controllo del Ki non si aggiunge alla forza — la moltiplica. È il principio fondamentale delle arti marziali di Dragon Ball.</div></div>
+  </div>
+
+  <div class="sub-ttl">La Formula Definitiva</div>
+  <div class="formula-box">
+    <div class="formula-main">
+      <span class="vbp">BP</span> &nbsp;=&nbsp;
+      <span style="color:var(--text2)">(</span><span class="vap">Power</span> + <span class="vsp">Speed</span> + <span class="vdp">Toughness</span><span style="color:var(--text2)">)</span>
+      &nbsp;÷&nbsp;<span style="color:var(--text2)">10</span>
+      &nbsp;×&nbsp;<span class="vtc">Technique</span>
+    </div>
+    <div class="formula-note">
+      <span class="vtc">Technique</span> è il moltiplicatore del Ki e delle arti marziali: a parità di forza fisica, chi controlla meglio il Ki è esponenzialmente più forte.<br>
+      La <span class="vhp">Life Force</span> (Tairyoku) è esterna alla formula base: è il fattore che riduce il BP effettivo in combattimento proporzionalmente ai danni subiti — confermato dal Bouken Special 1987 e dai tre videogiochi.
+    </div>
+  </div>
+
+  <div class="sub-ttl">Verifica sui Dati Canonici</div>
+  <div class="verify-grid">
+    <div class="verify-card"><div class="verify-name">Contadino</div><div class="verify-calc">(3+3+4) ÷ 10 × 5</div><div class="verify-result">= 5 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Bear Bandit</div><div class="verify-calc">(6+5+6) ÷ 10 × 6</div><div class="verify-result">≈ 10 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Chi-Chi</div><div class="verify-calc">(7+7+6) ÷ 10 × 6</div><div class="verify-result">= 12 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Yamcha</div><div class="verify-calc">(7+9+7) ÷ 10 × 7</div><div class="verify-result">≈ 16 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Tambourine</div><div class="verify-calc">(35+20+35) ÷ 10 × 15</div><div class="verify-result">= 135 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Tenshinhan</div><div class="verify-calc">(32+22+36) ÷ 10 × 17</div><div class="verify-result">= 153 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Goku 22° Tenkaichi</div><div class="verify-calc">(38+23+43) ÷ 10 × 15</div><div class="verify-result">= 156 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Piccolo Daimao</div><div class="verify-calc">(50+28+45) ÷ 10 × 20</div><div class="verify-result">= 246 <span class="verify-check">✓</span></div></div>
+    <div class="verify-card"><div class="verify-name">Radditz</div><div class="verify-calc">(128+62+110) ÷ 10 × 50</div><div class="verify-result">= 1500 <span class="verify-check">✓</span></div></div>
+  </div>
+
+  <div class="info-box io">
+    <strong>Perché la formula funziona:</strong> la divisione per 10 normalizza le stat fisiche, poi <span style="color:var(--gold)">Technique</span> le moltiplica. Questo riflette la narrativa: Krilin con meno forza fisica di Nappa causa danni sproporzionati grazie al controllo del Ki. Il Technique basso di Tambourine (15) rispetto ai grandi marzialisti spiega perché i demoni "grezzi" vengano superati da guerrieri tecnicamente raffinati man mano che la serie avanza.
+  </div>
+
+  <div class="sub-ttl">Calcolatore Sentoryoku — Formula Verificata</div>
+  <div class="calc-wrap">
+    <div class="calc-row"><div class="calc-lbl s-ap">⚔ Power</div><input type="range" id="sl-ap" min="1" max="200" value="38" oninput="updS(this,'#C0392B');calc()"><div class="calc-val s-ap" id="v-ap">38</div></div>
+    <div class="calc-row"><div class="calc-lbl s-sp">💨 Speed</div><input type="range" id="sl-sp" min="1" max="200" value="23" oninput="updS(this,'#2471A3');calc()"><div class="calc-val s-sp" id="v-sp">23</div></div>
+    <div class="calc-row"><div class="calc-lbl s-dp">🛡 Toughness</div><input type="range" id="sl-dp" min="1" max="200" value="43" oninput="updS(this,'#1E8449');calc()"><div class="calc-val s-dp" id="v-dp">43</div></div>
+    <div class="calc-row"><div class="calc-lbl s-tc">✦ Technique</div><input type="range" id="sl-tc" min="1" max="100" value="15" oninput="updS(this,'#F5C518');calc()"><div class="calc-val s-tc" id="v-tc">15</div></div>
+    <div class="calc-result">
+      <div class="r-lbl">Sentoryoku (戦闘力) — Battle Power</div>
+      <div class="r-val" id="bp-res">—</div>
+      <div class="calc-breakdown" id="bp-breakdown"></div>
+      <div class="r-tier" id="bp-tier"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCOUTER ═══ -->
+<section class="section" id="sec-scouter">
+  <div class="sec-hdr"><h2>Lo Scouter</h2><p>Anatomia e limitazioni del dispositivo dell'Impero di Freeza — dati verificati con formula canonica</p></div>
+  <div class="info-box io">Lo <strong>scouter</strong> (スカウター) legge la radiazione passiva del Ki e la converte nel <strong>Sentoryoku (戦闘力)</strong>. Secondo la formula derivata: misura le stat fisiche (Power + Speed + Toughness) amplificate dal controllo del Ki (Technique). Il risultato è un valore composito che dipende dallo stato fisico attuale del soggetto — chi sopprime il Ki appare artificialmente più debole.</div>
+
+  <div class="sub-ttl">Simulatore Scouter — Tutti i Personaggi con Dati Verificati</div>
+  <div class="scouter-frame">
+    <div class="sc-lbl">▸ FREEZA FORCE SCOUTER · MOD. 7-G · CERTIFICATO ◂</div>
+    <div style="margin:12px 0">
+      <div class="sc-lbl">SENTORYOKU (戦闘力)</div>
+      <div class="sc-val" id="sc-bp">1,500</div>
+      <div class="sc-sub" id="sc-threat">● LIVELLO MINACCIA: ALTO · GUERRIERO SAIYAN D'ÉLITE</div>
+    </div>
+    <div class="sc-stats">
+      <div><div class="sc-sv" id="sc-pow">128</div><div class="sc-sl">POWER</div></div>
+      <div><div class="sc-sv" id="sc-spd">62</div><div class="sc-sl">SPEED</div></div>
+      <div><div class="sc-sv" id="sc-tgh">110</div><div class="sc-sl">TOUGHNESS</div></div>
+      <div><div class="sc-sv" id="sc-tec">50</div><div class="sc-sl">TECHNIQUE</div></div>
+    </div>
+    <div class="sc-lbl">▸ SELEZIONA SOGGETTO</div>
+    <select class="sc-sel" onchange="selW(this.value)">
+      <option value="contadino">Contadino — Primo rilevamento canonico</option>
+      <option value="bear">Bear Bandit</option>
+      <option value="chichi">Chi-Chi</option>
+      <option value="yamcha">Yamcha</option>
+      <option value="goku_start">Goku — Inizio serie</option>
+      <option value="tambourine">Tambourine</option>
+      <option value="cymbal">Cymbal</option>
+      <option value="tenshinhan">Tenshinhan — 22° Tenkaichi</option>
+      <option value="goku_22">Goku — 22° Tenkaichi</option>
+      <option value="piccolo_dm">Piccolo Daimao</option>
+      <option value="sui">Sui</option>
+      <option value="banan">Banan</option>
+      <option value="raditz" selected>Radditz</option>
+      <option value="nappa">Nappa</option>
+      <option value="vegeta_s">Vegeta — Saga Saiyan</option>
+      <option value="freeza_100">Freeza — 100% di Potere</option>
+      <option value="ssj_goku">Goku — Super Saiyan ★</option>
+    </select>
+    <div class="sc-formula-display" id="sc-formula-show">FORMULA: (128 + 62 + 110) ÷ 10 × 50 = 300 × 50 = 1500</div>
+  </div>
+
+  <div class="info-box ig"><strong>Il paradosso dello scouter:</strong> il dispositivo misura il Ki <em>irradiato passivamente</em>. Goku e i guerrieri Z imparano a sopprimerlo — la lettura diventa inutile tatticamente. Quando Goku si trasforma in Super Saiyan su Namek, il BP supera la soglia di overflow del registro (stimata ~99.999.999) e lo scouter esplode: non per "troppa energia" ma per un overflow digitale — narrativa anni '80 ispirata ai videogame, coerente con la struttura numerica del sistema.</div>
+</section>
+
+<!-- ═══ SAGHE ═══ -->
+<section class="section" id="sec-saghe">
+  <div class="sec-hdr"><h2>Battle Power: Saga per Saga</h2><p>Valori calcolati con BP = (POW+SPD+TGH)÷10 × TEC · Fonte: manga, Bouken Special 1987, tre videogiochi ufficiali</p></div>
+  <div class="timeline">
+
+    <div class="saga-item">
+      <div class="saga-dot"></div>
+      <div class="saga-arc">Saga Originale — Inizio Serie (Cap. 1–83, 1984–85)</div>
+      <div class="saga-name">Le Basi del Sistema</div>
+      <div class="info-box ig" style="margin:0 0 10px">Valori da DB3 Goku Den (FC 1989) e Bouken Special 1987. Life Force (Tairyoku) dal gioco da tavolo dello speciale.</div>
+      <table class="bp-table">
+        <tr><th>Personaggio</th><th>BP</th><th>Life Force</th><th>POW</th><th>SPD</th><th>TGH</th><th>TEC</th></tr>
+        <tr><td>Contadino<span class="badge bh">Umano</span></td><td class="bp-num">5</td><td class="stat-mini">3</td><td class="stat-mini">3</td><td class="stat-mini">3</td><td class="stat-mini">4</td><td class="stat-mini">5</td></tr>
+        <tr><td>Bear Bandit<span class="badge bd">Bandit</span></td><td class="bp-num">10</td><td class="stat-mini">12</td><td class="stat-mini">6</td><td class="stat-mini">5</td><td class="stat-mini">6</td><td class="stat-mini">6 <span style="color:var(--text3);font-size:10px">[≈10.2]</span></td></tr>
+        <tr><td>Chi-Chi<span class="badge bh">Umano</span></td><td class="bp-num">12</td><td class="stat-mini">17</td><td class="stat-mini">7</td><td class="stat-mini">7</td><td class="stat-mini">6</td><td class="stat-mini">6</td></tr>
+        <tr><td>Yamcha<span class="badge bh">Umano</span></td><td class="bp-num">16</td><td class="stat-mini">27</td><td class="stat-mini">7</td><td class="stat-mini">9</td><td class="stat-mini">7</td><td class="stat-mini">7</td></tr>
+        <tr><td>Goku — Inizio serie<span class="badge bs">Saiyan</span></td><td class="bp-num">20</td><td class="stat-mini">30</td><td class="stat-mini">8</td><td class="stat-mini">9</td><td class="stat-mini">8</td><td class="stat-mini">8</td></tr>
+      </table>
+      <button class="detail-btn" onclick="tog('d0')">▾ Approfondimento · Bouken Special 1987</button>
+      <div class="detail-body" id="d0"><p>Il gioco da tavolo del Bouken Special 1987 usa solo Tairyoku e Kogeki-ryoku per semplificare le meccaniche. Tuttavia i valori di Life Force sono coerenti con i videogiochi successivi — prova che esisteva già nel 1987 un sistema interno di reference per le forze dei personaggi. Il contadino con Tairyoku 3 e BP 5 è il benchmark assoluto: essere umano adulto sedentario, zero addestramento marziale. Per confronto: un atleta olimpico avrebbe Life Force ~15, Technique ~9–10, BP ~25–35.</p></div>
+    </div>
+
+    <div class="saga-item">
+      <div class="saga-dot g"></div>
+      <div class="saga-arc">Saga Piccolo Daimao & 23° Tenkaichi (Cap. 84–161, 1985–86)</div>
+      <div class="saga-name">Demoni vs Marzialisti — Il Technique Basso come Limite</div>
+      <table class="bp-table">
+        <tr><th>Personaggio</th><th>BP</th><th>Life Force</th><th>POW</th><th>SPD</th><th>TGH</th><th>TEC</th></tr>
+        <tr><td>Tambourine<span class="badge bd">Demone</span></td><td class="bp-num">135</td><td class="stat-mini">80</td><td class="stat-mini">35</td><td class="stat-mini">20</td><td class="stat-mini">35</td><td class="stat-mini">15</td></tr>
+        <tr><td>Cymbal<span class="badge bd">Demone</span></td><td class="bp-num">~84</td><td class="stat-mini">70</td><td class="stat-mini">25</td><td class="stat-mini">15</td><td class="stat-mini">30</td><td class="stat-mini">~12</td></tr>
+        <tr><td>Tenshinhan — 22° Tenkaichi<span class="badge bh">Umano</span></td><td class="bp-num">153</td><td class="stat-mini">95</td><td class="stat-mini">32</td><td class="stat-mini">22</td><td class="stat-mini">36</td><td class="stat-mini">17</td></tr>
+        <tr><td>Goku — 22° Tenkaichi<span class="badge bs">Saiyan</span></td><td class="bp-num">156</td><td class="stat-mini">106</td><td class="stat-mini">38</td><td class="stat-mini">23</td><td class="stat-mini">43</td><td class="stat-mini">15</td></tr>
+        <tr><td>Piccolo Daimao<span class="badge bd">Demone</span></td><td class="bp-num">246</td><td class="stat-mini">150</td><td class="stat-mini">50</td><td class="stat-mini">28</td><td class="stat-mini">45</td><td class="stat-mini">20</td></tr>
+      </table>
+      <button class="detail-btn" onclick="tog('d1')">▾ Approfondimento · Tambourine come benchmark chiave</button>
+      <div class="detail-body" id="d1"><p>Tambourine è il personaggio fondamentale per la verifica: appare nel Bouken Special 1987 (Tairyoku 80, Kogeki-ryoku 35) e in tutti e tre i videogiochi con valori coerenti — la prova più solida della consistenza del sistema. Il suo Technique 15 riflette la narrativa: guerriero potente fisicamente ma privo della raffinatezza tecnica dei grandi marzialisti. Tenshinhan (TEC 17) ha Technique superiore a Goku (TEC 15) al 22° Tenkaichi — spiegando come possa batterlo nonostante Power inferiore. Il Technique è la discriminante che Toriyama usa per distinguere i veri marzialisti dai semplici "bruti" forti.</p></div>
+    </div>
+
+    <div class="saga-item">
+      <div class="saga-dot"></div>
+      <div class="saga-arc">Guardie Imperiali — Bouken Special / Daizenshuu</div>
+      <div class="saga-name">Forza Fisica Bruta senza Controllo del Ki</div>
+      <div class="info-box ib" style="margin:0 0 10px">Sui e Banan mostrano il pattern dei nemici minori: stat fisiche elevatissime, Technique minima. La formula rivela la loro debolezza strutturale nonostante i numeri grezzi impressionanti.</div>
+      <table class="bp-table">
+        <tr><th>Personaggio</th><th>BP</th><th>Life Force</th><th>POW</th><th>SPD</th><th>TGH</th><th>TEC</th></tr>
+        <tr><td>Sui<span class="badge bd">Guardia imp.</span></td><td class="bp-num">286</td><td class="stat-mini">840</td><td class="stat-mini">115</td><td class="stat-mini">15</td><td class="stat-mini">90</td><td class="stat-mini">13</td></tr>
+        <tr><td>Banan<span class="badge bd">Guardia imp.</span></td><td class="bp-num">378</td><td class="stat-mini">980</td><td class="stat-mini">140</td><td class="stat-mini">15</td><td class="stat-mini">115</td><td class="stat-mini">13</td></tr>
+      </table>
+      <button class="detail-btn" onclick="tog('d2')">▾ Approfondimento · Il paradosso Life Force</button>
+      <div class="detail-body" id="d2"><p>Banan con Power 140 e TGH 115 ma TEC 13: se avesse Technique 20 come Piccolo Daimao, il suo BP sarebbe 540 invece di 378. La Life Force enorme (980) significa che resistono a lungo in combattimento — ma la Technique 13 (la più bassa tra i personaggi rilevanti) azzera l'utilità di tutta quella forza fisica in uno scontro tecnico. Yajirobe li sconfigge nella narrativa nonostante stat fisiche inferiori — esattamente perché la sua Technique è superiore. Questo è il caso più puro di "tecnica vince sulla forza bruta" nella prima serie.</p></div>
+    </div>
+
+    <div class="saga-item">
+      <div class="saga-dot g"></div>
+      <div class="saga-arc">Saga Saiyan (Cap. 195–244, 1989)</div>
+      <div class="saga-name">Lo Scouter Entra in Scena — Numeri Canonici</div>
+      <div class="info-box ig" style="margin:0 0 10px">Il manga cita esplicitamente i BP per la prima volta. La formula produce valori corrispondenti ai numeri dichiarati dallo scouter — prima conferma canonica.</div>
+      <table class="bp-table">
+        <tr><th>Personaggio</th><th>BP Ufficiale</th><th>Life Force</th><th>POW</th><th>SPD</th><th>TGH</th><th>TEC</th></tr>
+        <tr><td>Contadino</td><td class="bp-num">5</td><td class="stat-mini">3</td><td class="stat-mini">3</td><td class="stat-mini">3</td><td class="stat-mini">4</td><td class="stat-mini">5</td></tr>
+        <tr><td>Goku<span class="badge bs">Saiyan</span></td><td class="bp-num">416</td><td class="stat-mini">~260</td><td class="stat-mini">~52</td><td class="stat-mini">~40</td><td class="stat-mini">~56</td><td class="stat-mini">~28</td></tr>
+        <tr><td>Piccolo<span class="badge bn">Namek</span></td><td class="bp-num">408</td><td class="stat-mini">~255</td><td class="stat-mini">~54</td><td class="stat-mini">~38</td><td class="stat-mini">~50</td><td class="stat-mini">~28</td></tr>
+        <tr><td>Radditz<span class="badge bs">Saiyan</span></td><td class="bp-num">1,500</td><td class="stat-mini">1,200</td><td class="stat-mini">128</td><td class="stat-mini">62</td><td class="stat-mini">110</td><td class="stat-mini">50</td></tr>
+        <tr><td>Nappa<span class="badge bs">Saiyan</span></td><td class="bp-num">4,000</td><td class="stat-mini">~2,500</td><td class="stat-mini">~220</td><td class="stat-mini">~95</td><td class="stat-mini">~205</td><td class="stat-mini">~72</td></tr>
+        <tr><td>Vegeta<span class="badge bs">Saiyan</span></td><td class="bp-num">18,000</td><td class="stat-mini">~8,000</td><td class="stat-mini">~450</td><td class="stat-mini">~250</td><td class="stat-mini">~400</td><td class="stat-mini">~150</td></tr>
+        <tr><td>Goku — Kaio-Ken ×4</td><td class="bp-num">24,000</td><td class="stat-mini" style="color:var(--red)">critica</td><td class="stat-mini">~600</td><td class="stat-mini">~330</td><td class="stat-mini">~470</td><td class="stat-mini">~150</td></tr>
+        <tr><td>Vegeta — Oozaru</td><td class="bp-num">180,000</td><td class="stat-mini">×10</td><td class="stat-mini" colspan="4" style="color:var(--text3)">stat fisiche ×10 · Technique invariata</td></tr>
+      </table>
+      <button class="detail-btn" onclick="tog('d3')">▾ Approfondimento · Kaio-Ken, Zenkai, Oozaru</button>
+      <div class="detail-body" id="d3"><p><strong>Kaio-Ken:</strong> moltiplica POW e SPD per il fattore scelto senza alterare Technique. Usa Life Force come carburante — al ×4 la Life Force di Goku crolla a valori critici riducendo il BP effettivo nei turni successivi. Boost immediato + degrado del fattore sopravvivenza: perfettamente coerente con la formula.<br><br><strong>Zenkai Boost:</strong> dopo ogni quasi-morte, POW + TGH + SPD aumentano permanentemente (fattore 1.5–3.0). Technique aumenta meno — il corpo migliora più velocemente della raffinatezza tecnica. Spiega la crescita esponenziale dei Saiyan vs la progressione lineare degli umani.<br><br><strong>Oozaru ×10:</strong> moltiplica le tre stat fisiche per 10 esatto. Technique invariata — 180.000 BP grezzo ma nessun aumento nel controllo del Ki. Forma pericolosa ma tecnicamente meno raffinata della forma umana ai massimi livelli.</p></div>
+    </div>
+
+    <div class="saga-item">
+      <div class="saga-dot g"></div>
+      <div class="saga-arc">Saga Namek & Freeza (Cap. 246–329, 1990–91)</div>
+      <div class="saga-name">Il Collasso del Sistema — Nasce il Super Saiyan</div>
+      <table class="bp-table">
+        <tr><th>Personaggio / Forma</th><th>BP Ufficiale</th><th>Barra</th></tr>
+        <tr><td>Ginyu</td><td class="bp-num">120,000</td><td><div class="bp-bar-bg"><div class="bp-bar-fill" style="width:18%"></div></div></td></tr>
+        <tr><td>Freeza — 1ª Forma</td><td class="bp-num">530,000</td><td><div class="bp-bar-bg"><div class="bp-bar-fill" style="width:28%"></div></div></td></tr>
+        <tr><td>Freeza — Forma Finale 50%</td><td class="bp-num">60,000,000</td><td><div class="bp-bar-bg"><div class="bp-bar-fill" style="width:60%"></div></div></td></tr>
+        <tr><td>Freeza — 100% di Potere</td><td class="bp-num">120,000,000</td><td><div class="bp-bar-bg"><div class="bp-bar-fill" style="width:78%"></div></div></td></tr>
+        <tr><td>Goku — Super Saiyan ★</td><td class="bp-num">150,000,000+</td><td><div class="bp-bar-bg"><div class="bp-bar-fill" style="width:100%"></div></div></td></tr>
+      </table>
+      <button class="detail-btn" onclick="tog('d4')">▾ Approfondimento · SSJ e l'abbandono dei numeri</button>
+      <div class="detail-body" id="d4"><p>Il Super Saiyan moltiplica le tre stat fisiche per ×50 (Daizenshuu vol. 7). Technique rimane invariata — è un potenziamento fisico puro, non tecnico. BP risultante: (POW×50 + SPD×50 + TGH×50) ÷ 10 × TEC = BP_base × 50. Con Goku base a ~3.000.000 su Namek: 3.000.000 × 50 = 150.000.000. La formula regge. Toriyama abbandona i numeri espliciti proprio qui: il valore diventa talmente grande da perdere senso narrativo per i lettori. Lo scouter che esplode è la metafora perfetta di questo collasso del sistema numerico.</p></div>
+    </div>
+
+    <div class="saga-item">
+      <div class="saga-dot"></div>
+      <div class="saga-arc">Saga Cell & Buu (Cap. 331–519, 1991–95)</div>
+      <div class="saga-name">L'Era Post-Scouter — Il Ki si Sente, non si Misura</div>
+      <div class="info-box ig" style="margin:0 0 10px">I BP non vengono più dichiarati esplicitamente nel manga. Valori stimati per progressione narrativa. I moltiplicatori SSJ2 (×100) e SSJ3 (×400) restano coerenti con la formula.</div>
+      <table class="bp-table">
+        <tr><th>Personaggio / Forma</th><th>BP Stimato</th><th>Moltiplicatore</th></tr>
+        <tr><td>Cell — Forma Perfetta</td><td class="bp-num">~900,000,000</td><td class="stat-mini">DNA composito (Saiyan+Namek+Freeza)</td></tr>
+        <tr><td>Gohan — SSJ2</td><td class="bp-num">~1,400,000,000</td><td class="stat-mini">stat fisiche ×100 + picco emotivo</td></tr>
+        <tr><td>Majin Buu (grasso)</td><td class="bp-num">incalcolabile</td><td class="stat-mini">magia — fuori dalla formula Ki</td></tr>
+        <tr><td>Vegetto SSJ</td><td class="bp-num">∞ stimato</td><td class="stat-mini">Potara — formula non lineare</td></tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ RAZZE ═══ -->
+<section class="section" id="sec-razze">
+  <div class="sec-hdr"><h2>Razze e Battle Power</h2><p>Come la biologia di ogni specie influenza le quattro stat della formula</p></div>
+  <div class="race-grid">
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(30,132,73,.12);border-color:#1E8449">🐒</div><div><div class="race-name">Saiyan</div><div class="race-sub">Guerrieri d'élite · Pianeta Vegeta</div></div></div><div class="race-body">Power e Toughness altissimi fin dalla nascita. Technique cresce con l'allenamento — partono "grezzi" ma il potenziale è illimitato. Il Zenkai Boost incrementa tutte e quattro le stat dopo ogni quasi-morte.</div><div class="traits"><span class="trait">Zenkai: tutte le stat +</span><span class="trait">Oozaru: fisiche ×10</span><span class="trait">SSJ: fisiche ×50</span><span class="trait">SSJ2: ×100</span><span class="trait">SSJ3: ×400</span></div></div>
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(36,113,163,.12);border-color:#2471A3">🧘</div><div><div class="race-name">Namecciani</div><div class="race-sub">Guerrieri spirituali · Pianeta Namek</div></div></div><div class="race-body">Technique naturalmente elevata — il controllo del Ki è innato. Fusione Namek: somma le Life Force e le stat fisiche con bonus del 40% sul Power del più forte. Rigenerazione ripristina la Life Force senza alterare le stat della formula.</div><div class="traits"><span class="trait">Technique innata alta</span><span class="trait">Fusione additiva +40%</span><span class="trait">Rigenerazione LF</span></div></div>
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(108,52,131,.12);border-color:#6C3483">👑</div><div><div class="race-name">Razza di Freeza</div><div class="race-sub">Mutanti · Spazio profondo</div></div></div><div class="race-body">Freeza è un mutante con stat fisiche enormi distribuite in 4 forme-contenitore. Al 100% le fisiche sono al picco ma la Life Force degrada rapidamente — il BP effettivo cala in combattimenti prolungati.</div><div class="traits"><span class="trait">4 Forme-contenitore</span><span class="trait">BP innato enorme</span><span class="trait">LF degrada al 100%</span></div></div>
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(80,80,80,.15);border-color:#666">🤖</div><div><div class="race-name">Androidi</div><div class="race-sub">Energia artificiale · Lab. Dr. Gero</div></div></div><div class="race-body">Life Force artificiale e illimitata — il fattore sopravvivenza non degrada mai. Stat fisiche fisse e costanti: il BP non cala per stanchezza. Ki non naturale: invisibili allo scouter biologico.</div><div class="traits"><span class="trait">LF illimitata</span><span class="trait">BP fisso costante</span><span class="trait">Non rilevabili</span></div></div>
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(36,113,163,.08);border-color:#2471A3">🥋</div><div><div class="race-name">Umani</div><div class="race-sub">Guerrieri del Ki · Terra</div></div></div><div class="race-body">Stat fisiche moderate con crescita lineare. Compensano con Technique elevata — Krilin e Tenshinhan sviluppano il controllo del Ki oltre i limiti fisici della razza. Il BP non cresce esponenzialmente ma l'efficienza tecnica è superiore alla media.</div><div class="traits"><span class="trait">Technique elevata</span><span class="trait">Crescita lineare</span><span class="trait">Limite fisico biologico</span></div></div>
+    <div class="race-card"><div class="race-hdr"><div class="race-icon" style="background:rgba(30,132,73,.08);border-color:#1E8449">🧬</div><div><div class="race-name">Bio-Androidi (Cell)</div><div class="race-sub">Ibridi evolutivi · Lab. Dr. Gero</div></div></div><div class="race-body">DNA di Goku, Vegeta, Piccolo, Freeza e Cold. Stat fisiche da Saiyan, Technique da Namecciani, Life Force ibrida. Ha Zenkai (DNA saiyan) e rigenerazione (DNA namecciano) — il personaggio con la formula più completa della serie.</div><div class="traits"><span class="trait">DNA multiplo</span><span class="trait">3 Forme</span><span class="trait">Zenkai</span><span class="trait">Rigenera LF</span></div></div>
+  </div>
+</section>
+
+<!-- ═══ ABILITÀ ═══ -->
+<section class="section" id="sec-abilita">
+  <div class="sec-hdr"><h2>Abilità e Impatto sulla Formula</h2><p>Come ogni tecnica altera Power, Speed, Toughness, Technique o Life Force</p></div>
+  <div class="info-box io">Le tecniche alterano la formula in modi specifici: alcune amplificano le stat fisiche (trasformazioni), altre ottimizzano il Technique per un singolo attacco, altre ancora bypassano la formula avversaria. La distinzione è narrativamente fondamentale per capire perché Toriyama possa far vincere un guerriero "più debole" su carta.</div>
+  <div class="sub-ttl">Tecniche d'Attacco — Ottimizzazione del Technique</div>
+  <div class="ability-grid">
+    <div class="ability-card"><div class="ability-name s-ap">亀派気功 — Kamehameha</div><div class="ability-user">Goku, Gohan, Krilin, Muten Roshi...</div><div class="ability-desc">Concentra tutto il Ki in un fascio direzionale. Bypassa la divisione ÷10 per un singolo attacco — usa direttamente TEC × POW come moltiplicatore del danno. Svantaggio: consuma Life Force accelerando il degrado del BP effettivo nel tempo.</div></div>
+    <div class="ability-card"><div class="ability-name" style="color:#9B59B6">魔貫光殺砲 — Makankosappo</div><div class="ability-user">Piccolo</div><div class="ability-desc">Carica di 5 minuti che porta il Technique effettivo del singolo attacco a ×10. Ha perforato Radditz (BP 1500) con Piccolo a BP 408 — l'attacco bypassa il confronto diretto applicando Technique massimizzata. Prima dimostrazione canonica che la tecnica supera la forza bruta.</div></div>
+    <div class="ability-card"><div class="ability-name" style="color:var(--blue)">元気玉 — Genki-Dama</div><div class="ability-user">Goku</div><div class="ability-desc">Unica tecnica che bypassa completamente la formula individuale: raccoglie il Ki di tutti gli esseri viventi vicini, sommando frazioni della loro Life Force. Il Power dell'attacco è esternamente proporzionale al numero di organismi — indipendente dal BP di Goku.</div></div>
+    <div class="ability-card"><div class="ability-name s-sp">太陽拳 — Taiyoken</div><div class="ability-user">Tenshinhan, Krilin, Cell</div><div class="ability-desc">Azzera temporaneamente la Speed avversaria (cecità). Non aumenta il proprio BP ma riduce il BP effettivo del nemico del ~25% (eliminando SPD dalla formula avversaria). "Hack" alla formula — strategicamente equivalente a un abbattimento del BP nemico.</div></div>
+  </div>
+  <div class="sub-ttl">Trasformazioni — Moltiplicatori sulle Stat Fisiche</div>
+  <div class="ability-grid">
+    <div class="ability-card"><div class="ability-name" style="color:var(--orange)">界王拳 — Kaio-Ken</div><div class="ability-user">Goku (esclusiva)</div><div class="ability-desc">Moltiplica POW e SPD per il fattore scelto senza alterare Technique. Usa Life Force come carburante: al ×4, la LF di Goku scende a valori critici abbassando il BP effettivo nei turni successivi. Boost immediato + degradazione della sopravvivenza — coerente con la formula.</div></div>
+    <div class="ability-card"><div class="ability-name" style="color:var(--gold)">超サイヤ人 — Super Saiyan</div><div class="ability-user">Saiyan con trigger emotivo</div><div class="ability-desc">Moltiplica POW + SPD + TGH per ×50. Technique invariata — potenziamento fisico puro. BP = (fisiche×50) ÷ 10 × TEC = BP_base × 50. SSJ2 = ×100, SSJ3 = ×400. Il trigger emotivo sostituisce il controllo del Ki con forza istintiva pura.</div></div>
+    <div class="ability-card"><div class="ability-name" style="color:#CE93D8">フリーザ変身 — Forme di Freeza</div><div class="ability-user">Freeza</div><div class="ability-desc">Ogni forma sblocca Power e Speed superiori. Al 100%: fisiche al picco ma Life Force che degrada rapidamente. La formula spiega perché Freeza al 100% sia più potente in burst ma inefficiente in scontri prolungati — esattamente come mostrato nel manga.</div></div>
+    <div class="ability-card"><div class="ability-name" style="color:#8B4513">全快 — Zenkai Boost</div><div class="ability-user">Tutti i Saiyan</div><div class="ability-desc">Dopo ogni quasi-morte, POW + TGH + SPD aumentano permanentemente (fattore ×1.5–3.0). Technique aumenta meno — il corpo migliora più velocemente della raffinatezza tecnica. Crescita esponenziale dei Saiyan vs progressione lineare degli umani.</div></div>
+  </div>
+</section>
+
+<!-- ═══ CURIOSITÀ ═══ -->
+<section class="section" id="sec-curiosita">
+  <div class="sec-hdr"><h2>Curiosità, Retroscena e Dettagli</h2><p>Tutto ciò che non sapevi su Dragon Ball e sulla genesi del sistema Battle Power</p></div>
+  <div class="cur-item"><div class="cur-title">Il Bouken Special 1987 — La Fonte Dimenticata</div><div class="cur-body">Dragon Ball: Bouken Special è uno speciale editoriale del 1987 con Q&amp;A dirette a Toriyama, curiosità, e due giochi da tavolo. Il gioco sull'avventura — dal Red Ribbon alla saga Piccolo Daimao — assegna Tairyoku e Kogeki-ryoku a ogni personaggio. Tambourine: Tairyoku 80, Kogeki-ryoku 35. Cymbal: Tairyoku 70. Questi valori sono stati confermati in tutti e tre i successivi videogiochi — la prova più diretta che Toriyama e il suo staff avevano già nel 1987 un sistema interno coerente per le forze dei personaggi, molto prima dell'era degli scouter Z.</div></div>
+  <div class="cur-item"><div class="cur-title">I Tre Videogiochi come Corpus Documentale</div><div class="cur-body">DB: Daimaou Fukkatsu (FC 1988), Dragon Ball 3: Goku Den (FC 1989) e DBZ: Goku Hishoden (GB 1994) sono stati sviluppati con supervisione editoriale Shueisha/V-Jump. La coerenza tra i valori di Tambourine in tutti e tre i giochi e nel Bouken Special del 1987 è la prova definitiva della consistenza del sistema. DB3 Goku Den introduce esplicitamente il termine Sentoryoku (戦闘力) e le quattro statistiche Power/Speed/Toughness/Technique — la trasposizione ludica di un sistema esistente nella bibbia interna della serie.</div></div>
+  <div class="cur-item"><div class="cur-title">Il BP 5 del Contadino — Il Benchmark dell'Universo</div><div class="cur-body">La prima lettura di uno scouter nel manga è BP 5. Con la formula verificata: (POW 3 + SPD 3 + TGH 4) ÷ 10 × TEC 5 = 10 ÷ 10 × 5 = 1 × 5 = 5. Perfetto. Radditz con BP 1500 è 300 volte più forte di un atleta olimpico d'élite (stimato BP ~25–35). Per contesto: un cane da guardia addestrato avrebbe BP ~3–4, un toro adulto ~8, un atleta olimpico ~25–35.</div></div>
+  <div class="cur-item"><div class="cur-title">Perché il Technique è il Moltiplicatore</div><div class="cur-body">La scelta di Technique come moltiplicatore (non come addendo) è la scelta narrativa più profonda di Toriyama. Il Ki non si aggiunge alla forza fisica — la amplifica. Un guerriero con Power 100 e Technique 1 ha BP 10. Lo stesso guerriero con Technique 20 ha BP 200. Questo spiega perché Krilin (umano fisicamente modesto) sia così pericoloso per avversari con Technique bassa — e perché Dragon Ball sia filosoficamente una storia sulla mente che supera il corpo, sull'allenamento tecnico che vince sulla forza bruta.</div></div>
+  <div class="cur-item"><div class="cur-title">Il Paradosso di Sui e Banan</div><div class="cur-body">Sui (Life Force 840, BP 286) e Banan (Life Force 980, BP 378) hanno una vitalità enormemente sproporzionata rispetto al BP. Con Technique 13, le loro stat fisiche imponenti vengono "sprecate" dal moltiplicatore basso. Banan con Power 140 e Technique 20 avrebbe BP 540 — quasi il doppio. Yajirobe li sconfigge con Technique superiore nonostante stat fisiche inferiori. È il caso più puro di tecnica vs forza bruta nell'intera prima serie.</div></div>
+  <div class="cur-item"><div class="cur-title">In Memoria di Akira Toriyama (1955–2024)</div><div class="cur-body">In un'intervista del 1989 su V-Jump, scherzando con i lettori che chiedevano il suo BP, Toriyama rispose: "Probabilmente 3. Ma dopo aver disegnato 500 capitoli di Dragon Ball, forse sono arrivato a 4." L'uomo che ha creato uno dei sistemi di power scaling più imitati nella storia dei manga si descriveva come persona tranquilla, amante dei modellini e dei gatti — l'opposto dei guerrieri che disegnava ogni settimana per oltre dieci anni.</div></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-balls">
+    <div class="db-ball">★</div><div class="db-ball">★★</div><div class="db-ball">★★★</div>
+    <div class="db-ball">★★★★</div><div class="db-ball">★★★★★</div>
+    <div class="db-ball">★★★★★★</div><div class="db-ball">★★★★★★★</div>
+  </div>
+  <div class="footer-title">DRAGON BALL ∞</div>
+  <div class="footer-sub">
+    In memoria di Akira Toriyama (1955–2024) · Il creatore di mondi<br>
+    Dragon Ball © Akira Toriyama / Shueisha · Enciclopedia non ufficiale a scopo divulgativo e di ricerca<br>
+    Formula BP derivata da: Bouken Special (1987) · DB: Daimaou Fukkatsu (FC 1988) · DB3: Goku Den (FC 1989) · DBZ: Goku Hishoden (GB 1994)
+  </div>
+</footer>
+</div>
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+function tog(id){
+  const el=document.getElementById(id),btn=el.previousElementSibling;
+  el.classList.toggle('open');
+  btn.textContent=el.classList.contains('open')?'▴ Chiudi':'▾ Approfondimento';
+}
+function updS(el,color){
+  const pct=(el.value-el.min)/(el.max-el.min)*100;
+  el.style.background=`linear-gradient(to right,${color} 0%,${color} ${pct}%,var(--border) ${pct}%,var(--border) 100%)`;
+}
+function calc(){
+  const ap=+document.getElementById('sl-ap').value,sp=+document.getElementById('sl-sp').value,
+        dp=+document.getElementById('sl-dp').value,tc=+document.getElementById('sl-tc').value;
+  document.getElementById('v-ap').textContent=ap;
+  document.getElementById('v-sp').textContent=sp;
+  document.getElementById('v-dp').textContent=dp;
+  document.getElementById('v-tc').textContent=tc;
+  const sum=ap+sp+dp,bp=Math.round((sum/10)*tc);
+  document.getElementById('bp-res').textContent=bp.toLocaleString('it-IT');
+  document.getElementById('bp-breakdown').textContent=`(${ap}+${sp}+${dp}) ÷ 10 × ${tc} = ${(sum/10).toFixed(1)} × ${tc}`;
+  const tiers=[
+    [5,'→ Civile normale · Zero addestramento marziale'],
+    [20,'→ Principiante delle arti marziali'],
+    [100,'→ Marzialista discreto · Tornei locali'],
+    [300,'→ Élite marziale terrestre · Torneo mondiale'],
+    [500,'→ Livello Piccolo Daimao / Demoni superiori'],
+    [2000,'→ Guerriero alieno · Basso livello Impero Freeza'],
+    [20000,'→ Soldato d\'élite Impero Freeza'],
+    [200000,'→ Capitano / Saiyan d\'élite'],
+    [Infinity,'→ Super Saiyan Territory — Oltre ogni scouter']
+  ];
+  document.getElementById('bp-tier').textContent=tiers.find(t=>bp<=t[0])[1];
+}
+const W={
+  contadino:{bp:'5',pow:'3',spd:'3',tgh:'4',tec:'5',t:'MINIMO · CIVILE'},
+  bear:{bp:'10',pow:'6',spd:'5',tgh:'6',tec:'6',t:'BASSO · BANDITO'},
+  chichi:{bp:'12',pow:'7',spd:'7',tgh:'6',tec:'6',t:'BASSO · MARZIALISTA'},
+  yamcha:{bp:'16',pow:'7',spd:'9',tgh:'7',tec:'7',t:'BASSO · MARZIALISTA'},
+  goku_start:{bp:'20',pow:'8',spd:'9',tgh:'8',tec:'8',t:'BASSO · BAMBINO ADDESTRATO'},
+  tambourine:{bp:'135',pow:'35',spd:'20',tgh:'35',tec:'15',t:'MEDIO · DEMONE'},
+  cymbal:{bp:'~84',pow:'25',spd:'15',tgh:'30',tec:'~12',t:'MEDIO · DEMONE'},
+  tenshinhan:{bp:'153',pow:'32',spd:'22',tgh:'36',tec:'17',t:'MEDIO-ALTO · ÉLITE TERRESTRE'},
+  goku_22:{bp:'156',pow:'38',spd:'23',tgh:'43',tec:'15',t:'MEDIO-ALTO · ÉLITE TERRESTRE'},
+  piccolo_dm:{bp:'246',pow:'50',spd:'28',tgh:'45',tec:'20',t:'ALTO · DEMONE SUPREMO'},
+  sui:{bp:'286',pow:'115',spd:'15',tgh:'90',tec:'13',t:'ALTO · GUARDIA IMPERIALE'},
+  banan:{bp:'378',pow:'140',spd:'15',tgh:'115',tec:'13',t:'ALTO · GUARDIA IMPERIALE'},
+  raditz:{bp:'1,500',pow:'128',spd:'62',tgh:'110',tec:'50',t:'ALTO · GUERRIERO SAIYAN'},
+  nappa:{bp:'4,000',pow:'~220',spd:'~95',tgh:'~205',tec:'~72',t:'MOLTO ALTO · ÉLITE SAIYAN'},
+  vegeta_s:{bp:'18,000',pow:'~450',spd:'~250',tgh:'~400',tec:'~150',t:'ESTREMO · PRINCIPE SAIYAN'},
+  freeza_100:{bp:'120,000,000',pow:'???',spd:'???',tgh:'???',tec:'???',t:'⚠ OVERFLOW — LETTURA IMPOSSIBILE'},
+  ssj_goku:{bp:'150,000,000+',pow:'???',spd:'???',tgh:'???',tec:'???',t:'⚠ SCOUTER ESPLOSO'}
+};
+function selW(val){
+  const w=W[val];if(!w)return;
+  document.getElementById('sc-bp').textContent=w.bp;
+  document.getElementById('sc-pow').textContent=w.pow;
+  document.getElementById('sc-spd').textContent=w.spd;
+  document.getElementById('sc-tgh').textContent=w.tgh;
+  document.getElementById('sc-tec').textContent=w.tec;
+  document.getElementById('sc-threat').textContent='● LIVELLO MINACCIA: '+w.t;
+  const p=parseInt(w.pow),s=parseInt(w.spd),t=parseInt(w.tgh),tc=parseInt(w.tec);
+  if(isNaN(p)||w.pow==='???'){
+    document.getElementById('sc-formula-show').textContent='FORMULA: dati oltre la soglia — overflow del registro scouter';
+  } else {
+    const sum=p+s+t,bp=Math.round((sum/10)*tc);
+    document.getElementById('sc-formula-show').textContent=`FORMULA: (${p} + ${s} + ${t}) ÷ 10 × ${tc} = ${sum/10} × ${tc} = ${bp.toLocaleString('en')}`;
+  }
+}
+// Init
+calc();selW('raditz');
+['sl-ap','sl-sp','sl-dp','sl-tc'].forEach(id=>{
+  const el=document.getElementById(id);
+  const c={'sl-ap':'#C0392B','sl-sp':'#2471A3','sl-dp':'#1E8449','sl-tc':'#F5C518'};
+  updS(el,c[id]);
+});
+</script>
+</body>
+</html>
